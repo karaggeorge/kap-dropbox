@@ -1,0 +1,8 @@
+{
+  "alias": "kap-dropbox",
+  "env": {
+    "CLIENT_ID": "@dropbox-client-id",
+    "CLIENT_SECRET": "@dropbox-client-secret",
+    "REDIRECT_URI": "@dropbox-redirect-uri"
+  }
+}

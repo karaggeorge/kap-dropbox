@@ -1,0 +1,22 @@
+{
+  "name": "kap-dropbox",
+  "version": "0.1.0",
+  "description": "Upload recordings to Dropbox",
+  "license": "MIT",
+  "repository": "karaggeorge/kap-dropbox",
+  "author": {
+    "name": "George Karagkiaouris",
+    "url": "https://gkaragkiaouris.com"
+  },
+  "main": "index.js",
+  "files": [
+    "index.js",
+    "auth.js"
+  ],
+  "keywords": [
+    "kap-plugin",
+    "dropbox",
+    "upload",
+    "share"
+  ]
+}
