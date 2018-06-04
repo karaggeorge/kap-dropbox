@@ -36,6 +36,7 @@ Default: `false`
 When set to true, the dropbox app(s) won't show a notification for this upload
 
 Used to avoid this:
+
 ![double](media/double.png)
 
 ## License
