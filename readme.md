@@ -20,7 +20,7 @@ Type: `string`
 
 When provided, uploads will be placed in that directory. For example, to upload recordings under a directory called `Kaptures`, set `path` to `/Kaptures`. If the directory doesn't exist it will be created.
 
-#### autorename
+#### autoRename
 
 Type: `boolean`\
 Default: `true`
@@ -30,7 +30,7 @@ If there is a conflict (the file already exists), the new upload will automatica
 #### mute
 
 Type: `boolean`\
-Default: `false`
+Default: `true`
 
 The Dropbox app won't show a notification for this upload.
 
