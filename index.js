@@ -13,6 +13,7 @@ const action = async context => {
     } catch (error) {
       if (error.message === 'canceled') {
         context.cancel();
+        return;
       } else {
         throw new Error('Authentication failed');
       }
@@ -73,17 +74,20 @@ const dropbox = {
   action,
   config: {
     path: {
-      title: 'Directory to save the files in',
+      title: 'Upload Directory',
+      description: 'The directory to save the files in.',
       type: 'string',
-      pattern: '^\/(.|[\r\n])*[^\/]$'
+      pattern: /^\/(.|[\r\n])*[^/]$/.source,
     },
     autorename: {
-      title: 'Automatically rename to avoid conflicts',
+      title: 'Auto-Rename',
+      title: 'Automatically rename to avoid conflicts.',
       type: 'boolean',
       default: true,
     },
     mute: {
-      title: 'Mute Dropbox desktop notification for the upload',
+      title: 'Mute Notifications',
+      description: 'Mute Dropbox desktop notification for the upload.',
       type: 'boolean',
       default: false,
     }
