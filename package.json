@@ -13,7 +13,7 @@
     "index.js",
     "auth.js"
   ],
-  "kapVersion": ">=3.0.1",
+  "kapVersion": ">=3.0.2",
   "keywords": [
     "kap-plugin",
     "dropbox",
