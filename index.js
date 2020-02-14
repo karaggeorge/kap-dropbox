@@ -28,12 +28,12 @@ const action = async context => {
     context.setProgress('Uploading…');
     const body = fs.readFileSync(filePath);
 
-    const {path = '', autorename, mute} = context.config.store;
+    const {path = '', autoRename, mute} = context.config.store;
 
     const dropboxParams = {
       path: `${path}/${context.defaultFileName}`,
       mode: {'.tag': 'add'},
-      autorename,
+      autorename: autoRename,
       mute
     };
 
@@ -77,10 +77,11 @@ const dropbox = {
       title: 'Upload Directory',
       description: 'The directory to save the files in.',
       type: 'string',
+      default: '/Kaptures',
       pattern: /^\/(.|[\r\n])*[^/]$/.source,
     },
-    autorename: {
-      title: 'Auto-Rename',
+    autoRename: {
+      title: 'Auto Rename',
       title: 'Automatically rename to avoid conflicts.',
       type: 'boolean',
       default: true,
@@ -89,7 +90,7 @@ const dropbox = {
       title: 'Mute Notifications',
       description: 'Mute Dropbox desktop notification for the upload.',
       type: 'boolean',
-      default: false,
+      default: true,
     }
   }
 };

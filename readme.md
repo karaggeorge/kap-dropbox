@@ -14,8 +14,6 @@ In the editor, after recording, select a format, and then `Upload to Dropbox`.
 
 In the “Plugins” pane, click the pencil icon to edit the plugin options.
 
-Alternatively, you can manually edit the options in your text editor; Click `Open plugins folder` and edit the `kap-dropbox.json` file to change options.
-
 #### path
 
 Type: `string`
