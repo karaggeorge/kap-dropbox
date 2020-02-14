@@ -1,6 +1,6 @@
 {
   "name": "kap-dropbox",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "Upload recordings to Dropbox",
   "license": "MIT",
   "repository": "karaggeorge/kap-dropbox",
