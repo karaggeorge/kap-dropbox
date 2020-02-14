@@ -1,9 +1,6 @@
 'use strict';
 const fs = require('fs');
 const getAccessToken = require('./auth');
-const {dialog} = require('electron');
-
-const err = message => dialog.showMessageBox({message, type: "error"});
 
 const action = async context => {
   const uploadEndpoint = 'https://content.dropboxapi.com/2/files/upload';
@@ -17,9 +14,8 @@ const action = async context => {
       if (error.message === 'canceled') {
         context.cancel();
       } else {
-        err(error.message);
+        throw new Error('Authentication failed');
       }
-      return;
     }
   }
 
@@ -66,7 +62,7 @@ const action = async context => {
     context.notify('A public link to the file has been copied to the clipboard');
   } catch (error) {
     if (error.statusMessage.startsWith('path/conflict/')) {
-      err('A file with that name already exists');
+      throw new Error('A file with that name already exists');
     }
   }
 };

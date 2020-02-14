@@ -1,5 +1,5 @@
 {
-  "alias": "kap-dropbox",
+  "name": "kap-dropbox",
   "env": {
     "CLIENT_ID": "@dropbox-client-id",
     "CLIENT_SECRET": "@dropbox-client-secret",

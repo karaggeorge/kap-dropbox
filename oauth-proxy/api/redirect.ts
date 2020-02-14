@@ -1,12 +1,10 @@
-const express = require('express');
+import {NowRequest, NowResponse} from '@now/node';
+
 const got = require('got');
 const FormData = require('form-data');
 
-const app = express();
-
-app.get('/token', (req, res) => {
-  console.log(req.query.code);
-  const {code} = req.query;
+export default (req: NowRequest, res: NowResponse) => {
+    const {code} = req.query;
 
   if (code) {
     const form = new FormData();
@@ -18,15 +16,12 @@ app.get('/token', (req, res) => {
 
     got('https://api.dropboxapi.com/oauth2/token', {method: 'post', body: form})
       .then(response => {
-        res.send(response.body);
+        res.writeHead(302, {'Location': `kap://plugins/kap-dropbox/${JSON.parse(response.body).access_token}`})
+        res.end();
       }).catch(error => {
         res.send(error.response.body);
       });
   } else {
     res.json({error: 'No code provided'});
   }
-});
-
-console.log(process.env.REDIRECT_URI);
-
-app.listen(3000);
+}

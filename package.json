@@ -6,13 +6,14 @@
   "repository": "karaggeorge/kap-dropbox",
   "author": {
     "name": "George Karagkiaouris",
-    "url": "https://gkaragkiaouris.com"
+    "url": "https://gkaragkiaouris.tech"
   },
   "main": "index.js",
   "files": [
     "index.js",
     "auth.js"
   ],
+  "kapVersion": ">=3.0.1",
   "keywords": [
     "kap-plugin",
     "dropbox",
